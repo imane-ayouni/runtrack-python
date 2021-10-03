@@ -1,0 +1,71 @@
+import re
+from bs4 import BeautifulSoup as bs
+
+import matplotlib.pyplot as plt
+with open("data.txt", 'r') as data_text:
+    new_data = data_text.read()
+    occurence_a = re.findall("[aA]",new_data)
+    print(len(occurence_a))
+    occurence_b = re.findall("[bB]",new_data)
+    print(len(occurence_b))
+    occurence_c = re.findall("[cC]",new_data)
+    print(len(occurence_c))
+    occurence_d = re.findall("[dD]",new_data)
+    print(len(occurence_d))
+    occurence_e = re.findall("[eE]",new_data)
+    print(len(occurence_e))
+    occurence_f = re.findall("[fF]",new_data)
+    print(len(occurence_f))
+    occurence_g = re.findall("[gG]",new_data)
+    print(len(occurence_g))
+    occurence_h = re.findall("[hH]",new_data)
+    print(len(occurence_h))
+    occurence_i = re.findall("[iI]",new_data)
+    print(len(occurence_i))
+    occurence_j = re.findall("[jJ]",new_data)
+    print(len(occurence_j))
+    occurence_k = re.findall("[kK]",new_data)
+    print(len(occurence_k))
+    occurence_l = re.findall("[lL]",new_data)
+    print(len(occurence_l))
+    occurence_m = re.findall("[mM]",new_data)
+    print(len(occurence_m))
+    occurence_n = re.findall("[nN]",new_data)
+    print(len(occurence_n))
+    occurence_o = re.findall("[oO]",new_data)
+    print(len(occurence_o))
+    occurence_p = re.findall("[pP]",new_data)
+    print(len(occurence_p))
+    occurence_q = re.findall("[qQ]",new_data)
+    print(len(occurence_q))
+    occurence_r = re.findall("[rR]",new_data)
+    print(len(occurence_r))
+    occurence_s = re.findall("[sS]",new_data)
+    print(len(occurence_s))
+    occurence_t = re.findall("[tT]",new_data)
+    print(len(occurence_t))
+    occurence_u = re.findall("[uU]",new_data)
+    print(len(occurence_u))
+    occurence_v = re.findall("[vV]",new_data)
+    print(len(occurence_v))
+    occurence_w = re.findall("[wW]",new_data)
+    print(len(occurence_w))
+    occurence_x = re.findall("[xX]",new_data)
+    print(len(occurence_x))
+    occurence_y = re.findall("[yY]",new_data)
+    print(len(occurence_y))
+    occurence_z = re.findall("[zZ]",new_data)
+    print(len(occurence_z))
+
+x = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+y = [len(occurence_a),len(occurence_b),len(occurence_c),len(occurence_d),len(occurence_e),len(occurence_f),
+     len(occurence_g),len(occurence_h),len(occurence_i),len(occurence_j),len(occurence_k),len(occurence_l),len(occurence_m),
+     len(occurence_n),len(occurence_o),len(occurence_p),len(occurence_q),len(occurence_r),len(occurence_s),len(occurence_t),
+     len(occurence_u),len(occurence_v),len(occurence_w),len(occurence_x),len(occurence_y),len(occurence_z)]
+
+plt.plot(x,y)
+plt.xlabel("Letters")
+plt.xlabel("Occurance of letters")
+plt.title("Percentage of letters occurence")
+
+plt.show()
