@@ -36,14 +36,13 @@ class Biblioteque :
         self.quantite = quantite
         livre_du_client = []
 
-        if self.titre in self.catalogue:
+        if self.titre in self.catalogue :
             livre_du_client.append(self.titre)
-            quantite = quantite[self.titre.index(self.titre)]
-            quantite -=1
-
-
+            x = self.catalogue.index(self.titre)
+            quantité = self.quantite[x]
+            quantité-=1
         print("vous avez prêté", livre_du_client)
-        print("il en reste en stock: ", quantite)
+        print("il en reste en stock: ", quantité)
 
 
 # à rectifier
