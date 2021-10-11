@@ -64,8 +64,11 @@ class Client(Personnes):
         Personnes.__init__(self,nom,prenom)
         self.collection = collection
     def inventaire(self):
-        print(Biblioteque.louer(self.client, self.livre))
-            ##########
+        print("la collection du client ", self.nom, self.prenom, "consiste de ", self.collection)
+        
+        
+        
+  
 list_livre1 = {"Titres" : ["Happy to see you", "What a wonderful world", " always a pleasure"],
                "quantité" : [20,18,9]
                }
@@ -102,7 +105,9 @@ rendu.rendreLivre(P4.nom, "Good morning America", list_livre3[1] )
 
 
 
-
+#Collection du client
+collection = Client(P4.nom,P4.prenom,list_livre3[0][0:2])
+collection.inventaire()
 
 
 
