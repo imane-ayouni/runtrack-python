@@ -45,16 +45,20 @@ class Biblioteque :
         print("il en reste en stock: ", quantité)
 
 
-# à rectifier
-            #########
-    def rendreLivre(self,client):
+    def rendreLivre(self,client,titre, quantite):
         self.client = client
+        self.titre = titre
+        self.quantite = quantite
         returned = []
-        x = Biblioteque.louer(self.client,self.livre)
-        for i in  x :
-            returned.append(i)
-        add = self.catalogue + returned
-        return add
+        returned.append(self.titre)
+        x = self.catalogue.index(self.titre)
+        quantite = self.quantite[x]
+        quantite += 1
+
+        print("Client ", self.client, " a rendu " , returned)
+        print("le stock de ce livre augmente à ", quantite)
+        
+        
 class Client(Personnes):
     def __init__(self, nom,prenom, collection):
         Personnes.__init__(self,nom,prenom)
@@ -92,6 +96,9 @@ pret = Biblioteque(P3.nom, list_livre3[0])
 pret.louer(P3.nom,"Happy memories",list_livre3[1])
 
 
+#Rendre un livre
+rendu = Biblioteque(P4.nom, list_livre3[0])
+rendu.rendreLivre(P4.nom, "Good morning America", list_livre3[1] )
 
 
 
