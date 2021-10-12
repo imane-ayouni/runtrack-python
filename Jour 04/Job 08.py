@@ -1,41 +1,38 @@
 
 n = int(input("Choose a number "))
 
+board = [["O"]*n for i in range(n)]
 
-# Creation du tableau
-board = [[0]*n for i in range(n)]
 
-# Verifier s'il y a des dames verticallement, horizontalement ou diagonallement
 
 def is_attacked(row, col):
     for c in range(0,n):
-        if board[row][c]==1 or board[c][col] == 1:
+        if board[row][c]== "X" or board[c][col] == "X":
             return True
     for upD in range(0,n):
         for dwD in range(0,n):
             if (upD+dwD == row+col) or (upD-dwD == row-col):
-                if board[upD][dwD] == 1:
+                if board[upD][dwD] == "X":
                     return True
     return False
 
-
-#S'il ne reste plus de dames , le jeu est fini. 
 def placeQueen(q):
     if q == 0:
         return True
     for row in range(0,n):
         for col in range(0,n):
             if (not (is_attacked(row,col))) and (board[row][col] != 1 ):
-                board[row][col] = 1
-                
-                # recursion 
+                board[row][col] = "X"
                 if placeQueen(q - 1) ==True:
                     return True
-                board[row][col] = 0
+                board[row][col] = "O"
+
+
 
     return False
 
 placeQueen(n)
+
 for i in board:
     print(i)
 
