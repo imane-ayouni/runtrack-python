@@ -13,7 +13,7 @@ board = [[0,5,1,0,4,0,0,7,0],
 # Fonction pour visialuser le tableau
 def printSudoku():
     for i in board:
-        print(i)
+        print(*i, sep= " ")
 
 # Creer la fonction qui va verifier si les cases sont assigniées ou pas, et produit une liste avec les index des cases vides
 
