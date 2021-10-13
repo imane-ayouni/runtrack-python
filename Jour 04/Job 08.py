@@ -34,7 +34,7 @@ def placeQueen(q):
 placeQueen(n)
 
 for i in board:
-    print(i)
+    print(*i, sep = ' ')
 
 
 
