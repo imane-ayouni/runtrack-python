@@ -1,19 +1,19 @@
 size = 9
-#Creer le matrice du jeu
-board = [[0,5,1,0,4,0,0,7,0],
-         [4,0,0,0,0,6,9,8,1],
-         [9,0,0,0,0,1,4,0,0],
-         [3,4,2,9,0,0,0,0,7],
-         [0,6,8,4,2,7,0,0,0],
-         [1,0,0,0,8,3,0,2,4],
-         [6,0,0,0,0,0,0,4,0],
-         [7,3,4,5,0,0,6,0,0],
-         [2,1,0,7,0,0,0,5,0]
-]
-# Fonction pour visialuser le tableau
-def printSudoku():
-    for i in board:
-        print(*i, sep= " ")
+# On importe les fichiers qui contient les grides du jeux en differents niveaux
+import easy
+import medium
+import hard
+
+# On laisse l'utilisateur choisir le niveau
+
+level_choice = input("Choose the level of complexity: easy, medium or hard : ")
+if level_choice == "easy":
+    board = easy.board
+if level_choice == "medium":
+    board = medium.board
+if level_choice == "hard":
+    board = hard.board
+
 
 # Creer la fonction qui va verifier si les cases sont assigniées ou pas, et produit une liste avec les index des cases vides
 
@@ -65,7 +65,9 @@ def solve_game():
 
     row = index[0]
     col = index[1]
+
 # S'il est possible de mettre un certain nombre dans la case, on le met. Sinon on revient à l'étape precedante et on choise un autre numero
+
     for i in range(0,10):
         if is_possible(i,row,col):
             board[row][col] = i
@@ -77,14 +79,10 @@ def solve_game():
     return False
 
 
-# Visualiser le resulat
-
+# Fonction pour visialuser le tableau
 if solve_game():
-    printSudoku()
-
-else :
-    print("Il n'ya pas de solution")
-
+    for i in board:
+        print(*i, sep=" ")
 
 
 
